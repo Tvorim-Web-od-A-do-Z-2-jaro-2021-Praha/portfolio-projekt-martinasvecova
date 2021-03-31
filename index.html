@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test</title>
+    <style>
+        .square-block {
+            color: white;
+            text-align: center
+        }
+
+        .square-block--small {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+
+        .square-block--medium {
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+           ;
+        }
+
+        .square-block--big {
+            background-color: purple;
+            width: 300px;
+            height: 300px;
+           ;
+        }
+
+        .square-block__text--smalltext {
+            font-size: 1rem;
+        }
+
+        .square-block__text--mediumtext {
+            font-size: 2em;
+        }
+
+        .square-block__text--bigtext {
+            font-size: 4rem;
+        }
+
+
+    </style>
 </head>
 <body>
-    
+    <div class="square-block square-block--small square-block--green">
+        <span class="square-block square-block__text square-block__text--smalltext"> Text 1</span>
+    </div>
+    <div class="square-block square-block--medium square-block--blue">
+        <span class="square-blok square-block__text square-block__text--mediumtext"> Text 2</span>
+    </div>
+    <div class="square-block square-block--big square-block--purple">
+        <span class="square-block square-block__text square-block__text--bigtext"> Text 3</span>
+    </div>
+  
 </body>
 </html>
