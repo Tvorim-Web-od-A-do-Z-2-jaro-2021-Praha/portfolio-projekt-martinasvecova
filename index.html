@@ -4,58 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <style>
-        .square-block {
-            color: white;
-            text-align: center
-        }
-
-        .square-block--small {
-            background-color: green;
-            width: 100px;
-            height: 100px;
-        }
-
-        .square-block--medium {
-            background-color: blue;
-            width: 200px;
-            height: 200px;
-           ;
-        }
-
-        .square-block--big {
-            background-color: purple;
-            width: 300px;
-            height: 300px;
-           ;
-        }
-
-        .square-block__text--smalltext {
-            font-size: 1rem;
-        }
-
-        .square-block__text--mediumtext {
-            font-size: 2em;
-        }
-
-        .square-block__text--bigtext {
-            font-size: 4rem;
-        }
-
-
-    </style>
+    <title>Martina Švecová | Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="square-block square-block--small square-block--green">
-        <span class="square-block square-block__text square-block__text--smalltext"> Text 1</span>
+    <div class="top-menu">
+        <ul class="top-menu__options">
+            <li class="top-menu__options--home"> <a href="#">HOME</a></li>
+            <li class="top-menu__options--others"> <a href="#">ABOUT ME</a></li>
+            <li class="top-menu__options--others"> <a href="#">MY SKILLS</a></li>
+            <li class="top-menu__options--others"> <a href="#">CONTACT ME</a></li>
+        </ul>
     </div>
-    <div class="square-block square-block--medium square-block--blue">
-        <span class="square-blok square-block__text square-block__text--mediumtext"> Text 2</span>
+    
+    <header>
+        <h1 class="header header__title"> Martina Švecová</h1>
+        <span class="header header__caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam optio, recusandae libero ullam exercitationem omnis voluptates autem illo vero repudiandae aspernatur ipsam quidem nihil quod itaque ab distinctio laudantium.</span>
+    </header>
+
+    <div class="profile-photo">
+        <img class="profile-photo__img" src="images/me_bw.jpg" alt="Martina Švecová">
+    </div>    
+        
+    <div class="main-container">
+        <div class="about-me">
+            <h2 class="about-me__title"> About Me</h2>
+            <p class="about-me__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>
+            <div class="about-me__resume"> 
+                <button class="about-me__resume--btn">DOWNLOAD RESUME</button></div>
+        </div>
+
+        <div class="skills">
+            <h2 class="skills__title">My Skills</h2>
+            <div class="skills__texts">
+                <p class="skills__texts--text1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>
+                <p class="skills__texts--text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>
+                <p class="skills__texts--text3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>        
+            </div>
+        </div>    
+
+        <div class="contact-me">
+            <h2 class="contact-me__title">Contact Me</h2>
+            <p class="contact-me__social">Follow me on my social sites:</p>
+            <ul class="contact-me__btn">
+                <li class="contact-me__btn--facebook"> <a href="https://www.facebook.com/martina.svecova894">FACEBOOK</a></li>
+                <li class="contact-me__btn--instagram"> <a href="https://www.facebook.com/martina.svecova894">INSTAGRAM</a></li>
+                <li class="contact-me__btn--linkedin"> <a href="https://www.linkedin.com/in/martina-svecova/">LINKEDIN</a></li>
+            </ul>
+            <p class="contact-me__email">or drop me an email:</p>
+                <a class="contact-me__email--link" href="mailto: martina.svecova894@gmail.com">martina.svecova894@gmail.com</a>
+        </div>
     </div>
-    <div class="square-block square-block--big square-block--purple">
-        <span class="square-block square-block__text square-block__text--bigtext"> Text 3</span>
-    </div>
+
+    <footer>
+        <p class="footer footer__text">© Martina Švecová 2021</p>
+    </footer>
   
 </body>
 </html>
