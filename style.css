@@ -1,12 +1,15 @@
 *, :after, :before { box-sizing: border-box; }
 
+
+
 body {
     margin: 0 auto;
     background-color: #f5f5f5;
     font-family: 'Montserrat', serif;
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 1.6;
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .top-menu {
@@ -23,7 +26,7 @@ body {
 .top-menu__options--home,
 .top-menu__options--others {
     list-style: none;
-    padding: 0px 70px;
+    padding: 0px 20px;
 }
 
 .top-menu__options--home a,
@@ -40,43 +43,58 @@ header {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(images/palmy.jpg), no-repeat;
     text-align: center;
     color: white;
-    padding: 30px 200px 200px 200px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
 }
 
 .header__title {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 .header__caption {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    padding-bottom: 30px;
 }
 
-.profile-photo__img {
-    border-radius: 50%;
-    transform: translate(0, -140px);
-    width: 15%;
-    border-style: solid;
-    border-color: #f5f5f5;
-    display: block;
-    margin: auto;
-}
+.header___grey-area {
+    height: 200px;
+    border-right: 2px solid #f5f5f5;
+    background-color: #bbbbbb;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-right: 2px solid #f5f5f5;
+    }
 
 .main-container {
-    width: 900px;
-    margin: auto;
-    transform: translate(0, -100px);
+    background-color: white;
+    padding: 30px 60px;
 }
 
 .about-me {
     padding-bottom: 30px;
+    display: grid;
+    grid-template-areas: 
+        "title title title"
+        "text text text"
+        "... button ..."
+        ;
+    align-items: center;    
 }
 
-.about-me__resume {
-    display: flex;
-    justify-content: center;
+.about-me__title {
+    grid-area: title;
 }
 
-.about-me__resume--btn {
+.about-me__text {
+    grid-area: text;
+    padding-right: 50px;
+}
+
+.btn__resume  {
+    grid-area: button;
     padding: 15px 32px;
     text-align: center;
     display: inline-block; 
@@ -90,43 +108,52 @@ header {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.about-me__resume--btn:hover {
+.btn__resume:hover {
     color: black;
     background-color: #f5f5f5;
     border: 2px solid #5E7FC1;
 }
 
 .skills__texts {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 25px;
 }
 
-.skills__texts--text1,
-.skills__texts--text2,
-.skills__texts--text3 {
-    flex: 1 1 calc(100%/3);
-    text-align: center;
-    padding: 0 10px;
+.contact-me {
+    display: grid;
+    grid-template-areas: 
+        "title title"
+        "social buttons"
+        "email link"
+    ;
+    align-items: center;
+    justify-items: start;
+}
+
+.contact-me__title {
+    grid-area: title;
+}
+
+.contact-me__social {
+    grid-area: social;
 }
 
 .contact-me__btn {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    grid-area: buttons;
+    padding-left: 0px;
 }
 
-.contact-me__btn--facebook,
-.contact-me__btn--instagram,
-.contact-me__btn--linkedin {
+.contact-me__btn--social-sites {
+    display: block;
+    padding: 30px;
     list-style: none;
 }
 
-.contact-me__btn--facebook a,
-.contact-me__btn--instagram a,
-.contact-me__btn--linkedin a {
+.contact-me__btn--social-sites a {
     text-decoration: none;
     padding: 15px 32px;
     text-align: center;
-    display: inline-block;
     transition-duration: 0.4s;
     background-color: #5E7FC1;
     color: #f5f5f5;
@@ -134,36 +161,79 @@ header {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.contact-me__btn--facebook a:hover,
-.contact-me__btn--instagram a:hover,
-.contact-me__btn--linkedin a:hover {
+.contact-me__btn--social-sites a:hover {
     color: black;
     background-color: #f5f5f5;
     border: 2px solid #5E7FC1;
 }
 
 .contact-me__email {
-    display: flex;
-    display: inline-block;
+    grid-area: email;
 }
 
-.contact-me__email--link {
-    padding-left: 12px;     
+.contact-me__link {
+   grid-area: link;
     color: black;
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
 }
 
-.contact-me__email--link:hover {
+.contact-me__link:hover {
     text-decoration: underline;
 }
-
 
 .footer {
     color:#434343;
     text-align: center;
     border-top: thin solid #434343;
-    margin: 30;
 }
 
+
+
+@media (min-width: 1200px) {
+
+    body {
+        width: 1200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 400px minmax(600px, 800px) ;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .header___grey-area {
+        height: 400px;
+    }    
+
+    .about-me {
+        display: grid;
+        grid-template-areas: 
+            "title title title"
+            "text text button"
+            ;
+    }
+
+    .about-me__title {
+        grid-area: title;
+    }
+    
+    .about-me__text {
+        grid-area: text;
+    }
+
+    .btn__resume {
+        grid-area: button;
+    }
+
+    .contact-me__btn--social-sites {
+        display: inline-block;
+    }    
+
+    .skills__texts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }    
+}    
