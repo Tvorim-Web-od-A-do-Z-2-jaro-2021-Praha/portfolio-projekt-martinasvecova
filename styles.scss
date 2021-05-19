@@ -1,0 +1,251 @@
+$backgroundColor: #f5f5f5;
+$darkBackgroundColor: #949494;
+$buttonColor: #5E7FC1;
+$marginAuto: 0 auto;
+$mainPadding: 30px;
+$basicFont: 1rem;
+$biggerFont: 1.3rem;
+$titleFont: 3.5rem;
+$thickBorder: 2px solid;
+$thinBorder: 1px solid;
+
+@mixin button ($backgroundColor: #5E7FC1, $color: #FFFFFF, $border: 2px solid $buttonColor, $shadow: 0 8px 16px 0 rgba(0,0,0,0.2), $transition: 0.4s, $alignment: center, $padding: 15px 32px, 
+                $display: inline-block, $cursor:pointer, $font: 'Montserrat', $fontSize: 16px) {
+    background-color: $backgroundColor;
+    color: $color;
+    border: $border;
+    box-shadow: $shadow;
+    transition-duration: $transition;
+    text-align: $alignment;
+    padding: $padding;
+    cursor: $cursor;
+    font-family: $font;
+    font-size: $fontSize;
+}
+
+@mixin grid ($columns, $rows) {
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+body {
+    margin: $marginAuto;
+    font: {
+        size: $basicFont;
+        family: 'Montserrat', serif;
+    }
+    line-height: 1.6;
+    width: 100%;
+}
+
+.top-menu {
+    background-color:black;
+    border-bottom: $thickBorder $backgroundColor;
+    justify-content: space-around;
+    display: flex;
+    &__options {
+        display: block;
+        text-align: center;
+        &--home, &--others {
+            list-style: none;
+            padding: 0px 10px;
+            a {
+                text-decoration: none;
+                color: #FFFFFF;    
+            }
+        }
+        &--home {
+            a {
+                border-bottom: $thinBorder #FFFFFF;  
+            }
+        }
+    }
+}
+
+header {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(images/palmy.jpg), no-repeat;
+    text-align: center;
+    color: #FFFFFF;
+    display: grid;
+    @include grid (100%, repeat(2, 1fr));
+    align-items: center;
+}
+
+.header__title {
+    font-size: $titleFont;
+}
+
+.header__caption {
+    font-size: $biggerFont;
+    padding-bottom: $mainPadding;
+}
+
+.header__grey-area {
+    height: 200px;
+    border-right: $thickBorder $backgroundColor;
+    background-color: $darkBackgroundColor;
+    grid-column: {
+        start: 1;
+        end: span 1;
+    }
+    grid-row: {
+        start: 1;
+        end: 3;
+    }
+}    
+    
+.main-container {
+    padding: $mainPadding $mainPadding*2;
+}
+
+.about-me {
+    padding-bottom: $mainPadding;
+    display: grid;
+    grid-template-areas: 
+        "title title title"
+        "text text text"
+        "... button ..."
+        ;
+    align-items: center;
+    &__title {
+        grid-area: title;
+    }    
+    &__text {
+        grid-area: text;
+        padding-right: $mainPadding;
+    }
+}
+
+.btn__resume  {
+    grid-area: button;
+    @include button();
+    &:hover {
+        @include button(#FFFFFF, $buttonColor);
+    }
+}
+
+.skills__texts {
+    display: grid;
+    @include grid (repeat(auto-fit, minmax(250px, 1fr)), 1fr);
+    column-gap: 25px;
+}
+
+.contact-me {
+    display: grid;
+    grid-template-areas: 
+        "title title"
+        "social buttons"
+        "email email"
+        "link link"
+    ;
+    align-items: center;
+    justify-items: start;
+    &__title {
+        grid-area: title;
+    }
+    &__social {
+        grid-area: social;
+    }
+    &__btn {
+        grid-area: buttons;
+        padding-left: 0px;
+        &--social-sites {
+            display: block;
+            padding: $mainPadding;
+            list-style: none;
+            a {
+                text-decoration: none;
+                @include button();
+                &:hover {
+                    @include button(#FFFFFF, $buttonColor);
+                }
+            }
+        } 
+    }
+    &__email {
+        grid-area: email;
+    }
+    &__link {
+        grid-area: link;
+        color: black;
+        font-weight: 600;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer {
+    color:$darkBackgroundColor;
+    text-align: center;
+    border-top: $thinBorder $darkBackgroundColor;
+    background-color: #FFFFFF;
+    margin-top: 0;
+}
+
+@media (min-width: 500px) {
+    .top-menu__options {
+        display: flex;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    body {
+        background-color: #f5f5f5;
+        width: 1200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);;
+    }
+
+    .top-menu__options {
+        &--home, &--others {
+            padding: 0px $mainPadding;
+        }    
+    }
+
+    header {
+        display: grid;
+        @include grid(400px minmax(600px, 800px), repeat(2, 1fr));
+    }
+
+    .header__grey-area {
+        height: 400px;
+    }    
+
+    .main-container {
+        background-color: #FFFFFF;
+    }
+
+    .about-me {
+        display: grid;
+        grid-template-areas: 
+            "title title title"
+            "text text button"
+            ;
+        &__title {
+            grid-area: title;
+        }    
+        &__text {
+            grid-area: text;          
+        }
+    }
+
+    .btn__resume {
+        grid-area: button;
+    }
+
+    .contact-me {
+        grid-template-areas: 
+            "title title"
+            "social buttons"
+            "email link"
+        ;
+        &__btn--social-sites {
+            display: inline-block;
+        }
+        &__link {
+            font-size: $biggerFont;
+        }
+    }    
+}
