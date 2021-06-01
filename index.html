@@ -22,8 +22,15 @@
     
     <header class="header">
         <h1 class="header header__title"> Martina Švecová</h1>
-        <span class="header header__caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam optio. recusandae libero ullam exercitationem omnis voluptates autem illo vero repudiandae aspernatur ipsam quidem nihil quod itaque ab distinctio laudantium.</span>
-        <div class="header header__grey-area"></div>
+        <span class="header header__caption">• Business Analyst by Profession <br> • Data Enthusiast <br> • Front-End Web Developer in Training</span>
+        <div class="header header__grey-area">
+            <picture>
+                <source 
+                    media="(min-width: 1200px)"
+                    srcset="images/hk_largeDisplay.jpg">
+                <img class="header header__grey-area--img" src="images/hk_smallDisplay.jpg" alt="me">
+            </picture>
+        </div>
     </header>  
         
     <div class="main-container">
@@ -31,7 +38,9 @@
             <h2 class="about-me__title"> About Me</h2>
             <p class="about-me__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>
             <div class="btn"> 
-                <button class="btn btn__resume">DOWNLOAD RESUME</button>
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
+                <button class="btn btn__resume">MY RESUME</button>
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
             </div>
         </div>    
         
@@ -39,8 +48,15 @@
         <div class="skills">
             <h2 class="skills__title">My Skills</h2>
             <div class="skills__texts">
+                <img class="skills__texts--illustration>" src="images/certificate.svg">
                 <p class="skills__texts--column-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>
+            </div> 
+            <div class="skills__texts">  
+                <img class="skills__texts--illustration>" src="images/data.svg">
                 <p class="skills__texts--column-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>
+            </div>
+            <div class="skills__texts">    
+                <img class="skills__texts--illustration>" src="images/coding.svg">
                 <p class="skills__texts--column-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolore reprehenderit corrupti corporis repellat explicabo, enim culpa cumque consequuntur numquam architecto! Officiis aliquam doloremque totam repellat ipsam incidunt explicabo expedita?</p>        
             </div>
         </div>    
@@ -49,14 +65,26 @@
             <h2 class="contact-me__title">Contact Me</h2>
             <p class="contact-me__social">Follow me on my social sites:</p>
 
-            <ul class="btn contact-me__btn">
-                <li class="btn contact-me__btn--social-sites"> <a href="https://www.facebook.com/martina.svecova894">FACEBOOK</a></li>
-                <li class="btn contact-me__btn--social-sites"> <a href="https://www.facebook.com/martina.svecova894">INSTAGRAM</a></li>
-                <li class="btn contact-me__btn--social-sites"> <a href="https://www.linkedin.com/in/martina-svecova/">LINKEDIN</a></li>
-            </ul>
+            <div class="contact-me__links">
+                <svg class="contact-me__links--logo" id="fb" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a xlink:href="https://www.facebook.com/martina.svecova894">
+                        <circle id="fb-circle" cx="35" cy="35" r="34" stroke="#5E7FC1" fill="#5E7FC1" />
+                        <path id="fb-path" d="M42.3654 20.9737H46.2V14.2957C45.5392 14.2047 43.2642 14 40.614 14C35.0868 14 31.2998 17.4772 31.2998 23.8682V29.75H25.2V37.2155H31.2998V56H38.7786V37.2173H44.632L45.5616 29.7518H38.7772V24.6085C38.7786 22.4507 39.3596 20.9737 42.3654 20.9737Z" fill="white"/>
+                    </a>
+                </svg>
+
+                <svg class="contact-me__links--logo" id="insta" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a xlink:href="https://www.instagram.com/mati.sve/">
+                        <circle id="insta-circle" cx="35" cy="35" r="34"stroke="#5E7FC1" fill="#5E7FC1" />
+                        <path id="insta-square" d="M55.9594 26.3481C55.86 24.1165 55.5002 22.5823 54.9822 21.2528C54.4488 19.8416 53.6284 18.5783 52.5546 17.528C51.5032 16.4613 50.232 15.6325 48.8376 15.1077C47.5006 14.5907 45.9732 14.2297 43.7416 14.1315C41.4946 14.0246 40.7806 14 35.0784 14C29.3762 14 28.6622 14.0246 26.4222 14.1231C24.1906 14.2215 22.6562 14.5827 21.3276 15.0993C19.915 15.6325 18.6522 16.4531 17.6022 17.528C16.5354 18.5783 15.7066 19.85 15.1816 21.2449C14.665 22.5823 14.3038 24.1081 14.2058 26.3397C14.098 28.588 14.0742 29.3019 14.0742 35.0041C14.0742 40.7064 14.098 41.4201 14.1974 43.6601C14.2954 45.8917 14.6566 47.426 15.1732 48.7554C15.7066 50.1665 16.5354 51.43 17.6022 52.4801C18.6522 53.5468 19.9234 54.3756 21.3192 54.9006C22.6562 55.4176 24.1822 55.7784 26.4138 55.8768C28.6538 55.9755 29.3678 55.9999 35.07 55.9999C40.7722 55.9999 41.4862 55.9755 43.7262 55.8768C45.9578 55.7784 47.4922 55.4176 48.8208 54.9006C51.6432 53.8093 53.8748 51.5777 54.9668 48.7554C55.4834 47.4179 55.8446 45.8917 55.9426 43.6601C56.0406 41.4201 56.0658 40.7064 56.0658 35.0041C56.0658 29.3019 56.0574 28.588 55.9594 26.3481ZM52.1766 43.496C52.087 45.5472 51.7412 46.6549 51.4542 47.3932C50.7486 49.223 49.2968 50.6751 47.467 51.3808C46.7292 51.668 45.6134 52.0125 43.5694 52.1027C41.3546 52.2014 40.6896 52.2257 35.0868 52.2257C29.4826 52.2257 28.8092 52.2014 26.6028 52.1027C24.5518 52.0125 23.443 51.668 22.7052 51.3808C21.7952 51.0444 20.9664 50.511 20.293 49.8137C19.5958 49.1326 19.0624 48.3122 18.7264 47.4016C18.438 46.6631 18.0936 45.5472 18.004 43.5043C17.906 41.2891 17.8808 40.6244 17.8808 35.0204C17.8808 29.4165 17.906 28.7438 18.004 26.5369C18.0936 24.4857 18.438 23.378 18.7264 22.6397C19.0624 21.7288 19.5958 20.9003 20.3014 20.2272C20.9818 19.5299 21.8022 18.9966 22.7136 18.6603C23.4514 18.3732 24.5672 18.0286 26.6112 17.9382C28.826 17.8399 29.491 17.8151 35.0938 17.8151C40.7064 17.8151 41.3714 17.8399 43.5778 17.9382C45.6288 18.0286 46.7376 18.3732 47.4754 18.6603C48.3854 18.9966 49.2142 19.5299 49.8876 20.2272C50.5848 20.9083 51.1182 21.7288 51.4542 22.6397C51.7412 23.378 52.087 24.4937 52.1766 26.5369C52.2746 28.7522 52.2998 29.4165 52.2998 35.0204C52.2998 40.6244 52.2746 41.2807 52.1766 43.496Z" fill="white"/>
+                        <path id="insta-inner" d="M35.0784 24.215C29.1214 24.215 24.2886 29.0473 24.2886 35.0041C24.2886 40.9609 29.1214 45.7933 35.0784 45.7933C41.034 45.7933 45.8668 40.9609 45.8668 35.0041C45.8668 29.0473 41.034 24.215 35.0784 24.215ZM35.0784 42.0028C31.213 42.0028 28.0798 38.8686 28.0798 35.0041C28.0798 31.1395 31.213 28.0055 35.0784 28.0055C38.9424 28.0055 42.077 31.1395 42.077 35.0041C42.077 38.8686 38.9424 42.0028 35.0784 42.0028Z" fill="white"/>
+                        <path id="insta-dot" d="M48.8124 23.7882C48.8124 25.1793 47.6854 26.3071 46.2938 26.3071C44.9022 26.3071 43.7752 25.1793 43.7752 23.7882C43.7752 22.3971 44.9022 21.2695 46.2938 21.2695C47.6854 21.2695 48.8124 22.3971 48.8124 23.7882Z" fill="white"/>
+                    </a>    
+                </svg>
+            </div>    
 
             <p class="contact-me__email">or drop me an email:</p>
-            <a class="contact-me__link" href="mailto: martina.svecova894@gmail.com">martina.svecova894@gmail.com</a>
+            <a class="contact-me__email-link" href="mailto: martina.svecova894@gmail.com">martina.svecova894@gmail.com</a>
             </div>    
         </div>
     </div>
