@@ -39,44 +39,60 @@ header {
 }
 
 .header__title {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
+  padding-top: 2rem;
+  margin: 0;
+  line-height: 2.5em;
+}
+.header__title::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 100%;
+  border-bottom: 2px solid #FFFFFF;
+  margin: 0 auto;
 }
 
 .header__caption {
   font-size: 1.3rem;
-  padding-bottom: 30px;
+  padding: 2rem;
 }
 
 .header__grey-area {
-  height: 200px;
-  border-right: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
   background-color: #949494;
   grid-column-start: 1;
   grid-column-end: span 1;
   grid-row-start: 1;
   grid-row-end: 3;
 }
+.header__grey-area--img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
 
 .main-container {
-  padding: 30px 60px;
+  padding: 2rem 4rem;
 }
 
 .about-me {
-  padding-bottom: 30px;
-  display: grid;
-  grid-template-areas: "title title title" "text text text" "... button ...";
-  align-items: center;
-}
-.about-me__title {
-  grid-area: title;
-}
-.about-me__text {
-  grid-area: text;
-  padding-right: 30px;
+  padding-bottom: 2rem;
+  display: block;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn svg {
+  fill: #5E7FC1;
+  padding: 1rem;
+  -webkit-animation: move 1s ease infinite;
+          animation: move 1s ease infinite;
+}
 .btn__resume {
-  grid-area: button;
   background-color: #5E7FC1;
   color: #FFFFFF;
   border: 2px solid #5E7FC1;
@@ -101,71 +117,67 @@ header {
   font-size: 16px;
 }
 
+@-webkit-keyframes move {
+  to {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes move {
+  to {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
 .skills__texts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: 1fr;
   -moz-column-gap: 25px;
        column-gap: 25px;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 3rem;
+}
+.skills__texts img {
+  width: 35%;
 }
 
 .contact-me {
-  display: grid;
-  grid-template-areas: "title title" "social buttons" "email email" "link link";
-  align-items: center;
-  justify-items: start;
-}
-.contact-me__title {
-  grid-area: title;
-}
-.contact-me__social {
-  grid-area: social;
-}
-.contact-me__btn {
-  grid-area: buttons;
-  padding-left: 0px;
-}
-.contact-me__btn--social-sites {
   display: block;
-  padding: 30px;
-  list-style: none;
+  padding-bottom: 2rem;
 }
-.contact-me__btn--social-sites a {
-  text-decoration: none;
-  background-color: #5E7FC1;
-  color: #FFFFFF;
-  border: 2px solid #5E7FC1;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transition-duration: 0.4s;
-  text-align: center;
-  padding: 15px 32px;
-  cursor: pointer;
-  font-family: "Montserrat";
-  font-size: 16px;
+.contact-me__links {
+  display: flex;
+  justify-content: center;
 }
-.contact-me__btn--social-sites a:hover {
-  background-color: #FFFFFF;
-  color: #5E7FC1;
-  border: 2px solid #5E7FC1;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transition-duration: 0.4s;
-  text-align: center;
-  padding: 15px 32px;
-  cursor: pointer;
-  font-family: "Montserrat";
-  font-size: 16px;
+.contact-me__links--logo {
+  padding: 1rem;
 }
-.contact-me__email {
-  grid-area: email;
-}
-.contact-me__link {
-  grid-area: link;
+.contact-me__email-link {
+  display: flex;
+  justify-content: center;
   color: black;
   font-weight: 600;
   text-decoration: none;
 }
-.contact-me__link:hover {
+.contact-me__email-link:hover {
   text-decoration: underline;
+}
+
+#fb-circle, #insta-circle {
+  fill: #5E7FC1;
+  transition: all ease 0.5s;
+  transform-origin: center;
+}
+
+#fb:hover #fb-circle, #insta:hover #insta-circle {
+  fill: transparent;
+}
+
+#fb:hover #fb-path, #insta:hover #insta-inner, #insta:hover #insta-dot, #insta:hover #insta-square {
+  fill: #5E7FC1;
 }
 
 .footer {
@@ -189,7 +201,7 @@ header {
   }
 
   .top-menu__options--home, .top-menu__options--others {
-    padding: 0px 30px;
+    padding: 0px 2rem;
   }
 
   header {
@@ -199,7 +211,9 @@ header {
   }
 
   .header__grey-area {
-    height: 400px;
+    height: 398px;
+    border-right: 2px solid #f5f5f5;
+    border-bottom: none;
   }
 
   .main-container {
@@ -215,19 +229,17 @@ header {
   }
   .about-me__text {
     grid-area: text;
+    padding-right: 2rem;
   }
 
   .btn__resume {
     grid-area: button;
   }
 
-  .contact-me {
-    grid-template-areas: "title title" "social buttons" "email link";
-  }
-  .contact-me__btn--social-sites {
+  .contact-me__links--logo {
     display: inline-block;
   }
-  .contact-me__link {
+  .contact-me__email-link {
     font-size: 1.3rem;
   }
 }/*# sourceMappingURL=styles.css.map */

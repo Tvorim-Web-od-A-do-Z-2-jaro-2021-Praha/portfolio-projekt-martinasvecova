@@ -1,11 +1,14 @@
 $backgroundColor: #f5f5f5;
 $darkBackgroundColor: #949494;
 $buttonColor: #5E7FC1;
+
 $marginAuto: 0 auto;
-$mainPadding: 30px;
+$mainPadding: 2rem;
+
 $basicFont: 1rem;
 $biggerFont: 1.3rem;
-$titleFont: 3.5rem;
+$titleFont: 2.75rem;
+
 $thickBorder: 2px solid;
 $thinBorder: 1px solid;
 
@@ -73,16 +76,26 @@ header {
 
 .header__title {
     font-size: $titleFont;
+    padding-top: $mainPadding;
+    margin: 0;
+    line-height: 2.5em;
+    &::after {
+        content:'';
+        display:block;
+        width: 20%; 
+        height:100%;
+        border-bottom: $thickBorder #FFFFFF;
+        margin: 0 auto;
+    }
 }
 
 .header__caption {
     font-size: $biggerFont;
-    padding-bottom: $mainPadding;
+    padding: $mainPadding;
 }
 
 .header__grey-area {
-    height: 200px;
-    border-right: $thickBorder $backgroundColor;
+    border-bottom: $thickBorder $backgroundColor;
     background-color: $darkBackgroundColor;
     grid-column: {
         start: 1;
@@ -92,6 +105,11 @@ header {
         start: 1;
         end: 3;
     }
+    &--img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+    }
 }    
     
 .main-container {
@@ -100,27 +118,30 @@ header {
 
 .about-me {
     padding-bottom: $mainPadding;
-    display: grid;
-    grid-template-areas: 
-        "title title title"
-        "text text text"
-        "... button ..."
-        ;
-    align-items: center;
-    &__title {
-        grid-area: title;
-    }    
-    &__text {
-        grid-area: text;
-        padding-right: $mainPadding;
-    }
+    display: block;
 }
 
-.btn__resume  {
-    grid-area: button;
-    @include button();
-    &:hover {
-        @include button(#FFFFFF, $buttonColor);
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        fill: $buttonColor;
+        padding: 1rem;
+        animation: move 1s ease infinite;
+    }
+    &__resume  {
+        @include button();
+        &:hover {
+            @include button(#FFFFFF, $buttonColor);
+        }
+    }     
+}
+
+@keyframes move {
+    to {
+        opacity: 0;
+        transform: translateY(50%) ;
     }
 }
 
@@ -128,45 +149,27 @@ header {
     display: grid;
     @include grid (repeat(auto-fit, minmax(250px, 1fr)), 1fr);
     column-gap: 25px;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: $mainPadding*1.5;
+    img {
+        width: 35%;
+    }
 }
 
 .contact-me {
-    display: grid;
-    grid-template-areas: 
-        "title title"
-        "social buttons"
-        "email email"
-        "link link"
-    ;
-    align-items: center;
-    justify-items: start;
-    &__title {
-        grid-area: title;
+    display: block;
+    padding-bottom: $mainPadding;
+    &__links {
+        display: flex;
+        justify-content: center;
+        &--logo {
+            padding: $mainPadding/2;
+        }    
     }
-    &__social {
-        grid-area: social;
-    }
-    &__btn {
-        grid-area: buttons;
-        padding-left: 0px;
-        &--social-sites {
-            display: block;
-            padding: $mainPadding;
-            list-style: none;
-            a {
-                text-decoration: none;
-                @include button();
-                &:hover {
-                    @include button(#FFFFFF, $buttonColor);
-                }
-            }
-        } 
-    }
-    &__email {
-        grid-area: email;
-    }
-    &__link {
-        grid-area: link;
+    &__email-link {
+        display: flex;
+        justify-content: center;
         color: black;
         font-weight: 600;
         text-decoration: none;
@@ -174,6 +177,21 @@ header {
             text-decoration: underline;
         }
     }
+}
+
+
+#fb-circle, #insta-circle {
+    fill: $buttonColor;
+    transition: all ease .5s;
+    transform-origin: center; 
+}
+
+#fb:hover #fb-circle, #insta:hover #insta-circle {
+    fill: transparent;
+}
+
+#fb:hover #fb-path, #insta:hover #insta-inner, #insta:hover #insta-dot, #insta:hover #insta-square {
+    fill: $buttonColor;
 }
 
 .footer {
@@ -210,7 +228,9 @@ header {
     }
 
     .header__grey-area {
-        height: 400px;
+        height: 398px;
+        border-right: $thickBorder $backgroundColor;
+        border-bottom: none;
     }    
 
     .main-container {
@@ -227,7 +247,8 @@ header {
             grid-area: title;
         }    
         &__text {
-            grid-area: text;          
+            grid-area: text;
+            padding-right: $mainPadding;          
         }
     }
 
@@ -236,15 +257,10 @@ header {
     }
 
     .contact-me {
-        grid-template-areas: 
-            "title title"
-            "social buttons"
-            "email link"
-        ;
-        &__btn--social-sites {
+        &__links--logo {
             display: inline-block;
         }
-        &__link {
+        &__email-link {
             font-size: $biggerFont;
         }
     }    
