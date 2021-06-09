@@ -179,18 +179,22 @@ header {
     }
 }
 
-
 #fb-circle, #insta-circle {
     fill: $buttonColor;
     transition: all ease .5s;
     transform-origin: center; 
 }
 
-#fb:hover #fb-circle, #insta:hover #insta-circle {
-    fill: transparent;
+#linkedin-circle {
+    transition: all ease .5s;
+    transform-origin: center;    
 }
 
-#fb:hover #fb-path, #insta:hover #insta-inner, #insta:hover #insta-dot, #insta:hover #insta-square {
+#fb:hover #fb-circle, #insta:hover #insta-circle, #linkedin:hover #linkedin-path {
+    fill: #fff;
+}
+
+#fb:hover #fb-path, #insta:hover #insta-inner, #insta:hover #insta-dot, #insta:hover #insta-square, #linkedin:hover #linkedin-circle {
     fill: $buttonColor;
 }
 
